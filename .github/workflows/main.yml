@@ -28,14 +28,14 @@ jobs:
 
       - uses: actions/cache@v2
         with:
-          path: ~/.cache/pip
+          path: ../pipcache
           key: ${{ hashFiles('requirements.txt') }}
         
       - name: Install requirements
-        run: pip install --upgrade --upgrade-strategy eager -r requirements.txt -e .
+        run: pip install --upgrade --upgrade-strategy eager -r requirements.txt --cache-dir ../pipcache
       
       - name: Install PyInstaller globally
-        run: pip install --upgrade --upgrade-strategy eager pyinstaller
+        run: pip install --upgrade --upgrade-strategy eager pyinstaller ../pipcache
       
       - name: BUILD TIME !!!
         run: pyinstaller --onefile Spammer.py
