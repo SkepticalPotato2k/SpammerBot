@@ -47,19 +47,18 @@ jobs:
       - name: BUILD TIME !!!
         run: |
           pyinstaller --onefile Spammer.py
-          dir
-          dir ./dist
+          copy ./dist/Spammer.exe ./Spammer.exe
       
       - name: RELEASE TIME !!!
         if: github.event_name == 'push'
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          repo_token: "${{ secrets.GITHUB_TOKENN }}"
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: true
           title: "Automatic Pre-Relese (unstable)"
           files: |
-            './dist/Spammer.exe'
+            'Spammer.exe'
             'LICENSE'
             'README.md'
       
