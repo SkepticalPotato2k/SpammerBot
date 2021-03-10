@@ -1,7 +1,5 @@
 # SpammerBot
 
-![Spammer_PYQEv8rxc7](https://user-images.githubusercontent.com/79303977/110596363-35f88b00-81a5-11eb-8375-4440c02bb4ea.png)
-
 ## Installation:
 
 ### MAKE SURE YOU HAVE PYTHON INSTALLED
