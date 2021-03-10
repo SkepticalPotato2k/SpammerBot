@@ -44,11 +44,6 @@ jobs:
           .\venv\Scripts\activate.bat
           pyinstaller --onefile Spammer.py
       
-      - name: BUILD TIME !!!
-        run: |
-          .\venv\Scripts\activate.bat
-          pyinstaller --onefile Spammer.py
-      
       - name: RELEASE TIME !!!
         if: github.event_name == 'push'
         uses: "marvinpinto/action-automatic-releases@latest"
