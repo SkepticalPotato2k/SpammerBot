@@ -17,3 +17,8 @@ How To Use:
 5) A Countdown Would Pop Up. Select A Text Box Where You Would Spam.
 
 6) And Done! You Have Spammed With Bot Succesfully!
+
+NOTE:
+
+You Can Use This To Troll Your Friends But There Are Some Chat Apps Which Has Some ToS Rules Against Spamming.You Might Receive Ban Or Mute Or Your Friend Might Block You.
+I Am Not Responsible For Any Damages Done.
