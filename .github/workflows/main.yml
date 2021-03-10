@@ -39,10 +39,10 @@ jobs:
             ${{ runner.os }}-pip-
         
       - name: Install requirements
-        run: pip install --upgrade --upgrade-strategy eager -r requirements.txt --cache-dir ../pipcache
+        run: pip install --upgrade --upgrade-strategy eager -r requirements.txt
       
       - name: Install PyInstaller globally
-        run: pip install --upgrade --upgrade-strategy eager pyinstaller ../pipcache
+        run: pip install --upgrade --upgrade-strategy eager pyinstaller
       
       - name: BUILD TIME !!!
         run: pyinstaller --onefile Spammer.py
