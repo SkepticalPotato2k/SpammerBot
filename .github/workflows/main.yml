@@ -25,24 +25,20 @@ jobs:
         with:
           python-version: '3.x'
           architecture: 'x64'
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ hashFiles('setup.py') }}-${{ hashFiles('dev-requirements.txt') }}
+        
+      - name: Install requirements
+        run: pip install --upgrade --upgrade-strategy eager -r requirements.txt -e .
       
       - name: Install PyInstaller globally
-        run: pip install pyinstaller
-      
-      - name: Set up virtualenv
-        run: |
-          pip install virtualenv
-          virtualenv venv
-      
-      - name: Set up dependencies
-        run: |
-          .\venv\Scripts\activate.bat
-          pip install -r requirements.txt
+        run: pip install --upgrade --upgrade-strategy eager pyinstaller
       
       - name: BUILD TIME !!!
-        run: |
-          .\venv\Scripts\activate.bat
-          pyinstaller --onefile Spammer.py
+        run: pyinstaller --onefile Spammer.py
       
       - name: RELEASE TIME !!!
         if: github.event_name == 'push'
@@ -53,7 +49,7 @@ jobs:
           prerelease: false
           title: "Release"
           files: |
-            './dist/*.exe'
+            './dist/Spammer.exe'
             'LICENSE'
             'README.md'
       
