@@ -10,8 +10,10 @@ How To Use:
 > 2) To Spam Infinitely.
 > 3) To Exit.
 
-3) Follow Its Instructions.
+3) Type The Option Number Which You Should Use. 
 
-4) A Countdown Would Pop Up. Select A Text Box Where You Would Spam.
+4) Follow Its Instructions.
 
-5) And Done! You Have Spammed With Bot Succesfully!
+5) A Countdown Would Pop Up. Select A Text Box Where You Would Spam.
+
+6) And Done! You Have Spammed With Bot Succesfully!
