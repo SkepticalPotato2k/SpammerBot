@@ -1,24 +1,46 @@
 # SpammerBot
-How To Use:
 
-1) Open It. The Script Would Look Like This.
+> A Spammer Written In Python
 
-![Spammer_PYQEv8rxc7](https://user-images.githubusercontent.com/79303977/110596363-35f88b00-81a5-11eb-8375-4440c02bb4ea.png)
+## Installation:
 
-2) There Would Be 3 Options.
-> 1) To Select How Many Times A Sentence (OR) Word Should Be Spammed.
-> 2) To Spam Infinitely.
-> 3) To Exit.
+### MAKE SURE YOU HAVE PYTHON INSTALLED
 
-3) Type The Option Number Which You Should Use. 
+```sh
+# Install virtualenv globally
+pip install virtualenv
 
-4) Follow Its Instructions.
+# Create a new virtual enviroment
+virtualenv venv
 
-5) A Countdown Would Pop Up. Select A Text Box Where You Would Spam.
+# Activate the virtual enviroment
+# You should see "(venv)" appear before your prompt
+source venv/bin/activate
 
-6) And Done! You Have Spammed With Bot Succesfully!
+# Install requirements
+pip install -r requirements.txt
+```
+## Usage:
 
-NOTE:
+### How to get back to the venv to update requirements, run script, etc:
+- For Linux: Type `source venv/bin/activate` in the terminal.
+- For Windows: Type `.\venv\Scripts\activate.bat` in cmd.
 
-You Can Use This To Troll Your Friends But There Are Some Chat Apps Which Has Some ToS Rules Against Spamming.You Might Receive Ban Or Mute Or Your Friend Might Block You.
-I Am Not Responsible For Any Damages Done.
+### How to run SpammerBot:
+
+- Make sure you're in the virtual enviroment
+- Type `python Spammer.py` in the terminal/cmd.
+- There are 3 options, it will ask which one:
+> 1) Spam for N times (It will ask how many)
+> 2) Spam infinitely
+> 3) Exit
+
+### How to exit virtual enviroment:
+- Type `deactivate` in the terminal/cmd.
+
+
+## NOTE:
+
+There are usually rules in the terms of service documents of services against using bots like this.
+
+The creators are **NOT** responsible for any damage you could cause.
