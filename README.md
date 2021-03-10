@@ -1,5 +1,7 @@
 # SpammerBot
 
+> A Spammer Written In Python
+
 ## Installation:
 
 ### MAKE SURE YOU HAVE PYTHON INSTALLED
