@@ -45,16 +45,19 @@ jobs:
         run: pip install --upgrade --upgrade-strategy eager pyinstaller
       
       - name: BUILD TIME !!!
-        run: pyinstaller --onefile Spammer.py
+        run: |
+          pyinstaller --onefile Spammer.py
+          dir
+          dir ./dist
       
       - name: RELEASE TIME !!!
         if: github.event_name == 'push'
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          repo_token: "${{ secrets.GITHUB_TOKENN }}"
           automatic_release_tag: "latest"
-          prerelease: false
-          title: "Release"
+          prerelease: true
+          title: "Automatic Pre-Relese (unstable)"
           files: |
             './dist/Spammer.exe'
             'LICENSE'
