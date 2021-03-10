@@ -1,0 +1,67 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Set up Git
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
+      
+      - name: Install PyInstaller globally
+        run: pip install pyinstaller
+      
+      - name: Set up virtualenv
+        run: |
+          pip install virtualenv
+          virtualenv venv
+      
+      - name: Set up dependencies
+        run: |
+          .\venv\Scripts\activate.bat
+          pip install -r requirements.txt
+      
+      - name: BUILD TIME !!!
+        run: |
+          .\venv\Scripts\activate.bat
+          pyinstaller --onefile Spammer.py
+      
+      - name: BUILD TIME !!!
+        run: |
+          .\venv\Scripts\activate.bat
+          pyinstaller --onefile Spammer.py
+      
+      - name: RELEASE TIME !!!
+        if: github.event_name == 'push'
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: "Release"
+          files: |
+            './dist/*.exe'
+            'LICENSE'
+            'README.md'
+      
+      
+
+
