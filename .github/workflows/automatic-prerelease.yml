@@ -1,17 +1,10 @@
-# This is a basic workflow to help you get started with Actions
+name: Automatic Pre-Release
 
-name: Release EXE file automatically
-
-# Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
     runs-on: windows-latest
@@ -45,7 +38,10 @@ jobs:
         run: pip install --upgrade --upgrade-strategy eager pyinstaller
       
       - name: BUILD TIME !!!
-        run: pyinstaller --onefile Spammer.py
+        run: |
+          pyinstaller --onefile Spammer.py
+          copy .\dist\Spammer.exe .\Spammer.exe
+          dir
       
       - name: RELEASE TIME !!!
         if: github.event_name == 'push'
@@ -53,13 +49,12 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
-          prerelease: false
-          title: "Release"
+          prerelease: true
+          title: Automatic Pre-Relese (unstable)
           files: |
-            './dist/Spammer.exe'
-            'LICENSE'
-            'README.md'
-      
-      
+            Spammer.exe
+            LICENSE
+            README.md
+
 
 
